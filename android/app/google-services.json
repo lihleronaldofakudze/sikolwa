@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "306037179502",
+    "project_id": "sikolwa",
+    "storage_bucket": "sikolwa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306037179502:android:0d7ab90b6bdd2f36b7d27f",
+        "android_client_info": {
+          "package_name": "io.cloutdevelopers.skolwa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306037179502-n7upus434e6dmftucogp2s1tubk4mfu5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe7mP7xaO6VYq3bSLrJbCSnOIn-0UObRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306037179502-n7upus434e6dmftucogp2s1tubk4mfu5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

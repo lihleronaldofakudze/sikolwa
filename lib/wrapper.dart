@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:skolwa/screens/admin/admin_home.dart';
-import 'package:skolwa/screens/user/user_home.dart';
-import 'package:skolwa/screens/view/view_home.dart';
+import 'package:skolwa/screens/parent/parent_home.dart';
+import 'package:skolwa/screens/student/student_home.dart';
+import 'package:skolwa/screens/teacher/teacher_home.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({Key? key}) : super(key: key);
@@ -12,11 +13,11 @@ class Wrapper extends StatelessWidget {
     if (role == 'Administrator') {
       return AdminHome();
     } else if (role == 'Student') {
-      return UserHome();
+      return StudentHome();
     } else if (role == 'Parent') {
-      return ViewHome();
+      return ParentHome();
     } else if (role == 'Teacher') {
-      return ViewHome();
+      return TeacherHome();
     }
     return CircularProgressIndicator();
   }

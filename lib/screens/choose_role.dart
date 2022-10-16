@@ -9,74 +9,91 @@ class ChooseRole extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(23),
+          padding: const EdgeInsets.all(23),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(
+              const Text(
                 'Sikolwa',
                 style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'Choose the role that best describes you after receiving your login details, from the administrator.',
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 23,
               ),
               SizedBox(
                 width: double.infinity,
+                height: 50,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/login',
                         arguments: 'Administrator');
                   },
-                  child: Text(
+                  child: const Text(
                     'Administrator',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 10,
+              ),
               SizedBox(
                 width: double.infinity,
-                child: OutlinedButton(
+                height: 50,
+                child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/login', arguments: 'Teacher');
+                    Navigator.pushNamed(context, '/login',
+                        arguments: 'Teacher');
                   },
-                  child: Text(
+                  child: const Text(
                     'Teacher',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 10,
+              ),
               SizedBox(
                 width: double.infinity,
+                height: 50,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/login',
                         arguments: 'Student');
                   },
-                  child: Text(
+                  child: const Text(
                     'Student',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 10,
+              ),
               SizedBox(
                 width: double.infinity,
-                child: OutlinedButton(
+                height: 50,
+                child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/login', arguments: 'Parent');
                   },
-                  child: Text(
+                  child: const Text(
                     'Parent',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 20,
               ),
             ],
           ),

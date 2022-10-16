@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skolwa/widgets/admin_drawer.dart';
+import 'package:skolwa/screens/admin/admin_drawer.dart';
 
 class AdminHome extends StatelessWidget {
   const AdminHome({Key? key}) : super(key: key);
@@ -7,7 +7,7 @@ class AdminHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: adminDrawer(),
+      drawer: adminDrawer(context),
       appBar: AppBar(
         title: Text(
           'Administrator',

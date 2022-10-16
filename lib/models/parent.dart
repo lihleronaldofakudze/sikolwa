@@ -1,5 +1,5 @@
 class Parent {
-  final int id;
+  final String id;
   final String image;
   final String name;
   final String surname;

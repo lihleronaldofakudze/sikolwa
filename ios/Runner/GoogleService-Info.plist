@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>306037179502-sf9bjgisjovv55d0h9tiu40l7ndgfecr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.306037179502-sf9bjgisjovv55d0h9tiu40l7ndgfecr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAvMcWxL9-UZHsAxIDOkmylTHTrg0u4RKA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>306037179502</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.cloutdevelopers.skolwa</string>
+	<key>PROJECT_ID</key>
+	<string>sikolwa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sikolwa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:306037179502:ios:b2bfb620ab0c6ce4b7d27f</string>
+</dict>
+</plist>

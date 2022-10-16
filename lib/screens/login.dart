@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final role = ModalRoute.of(context)!.settings.arguments;
@@ -10,62 +18,69 @@ class Login extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(23),
+          padding: const EdgeInsets.all(23),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              Text(
+              const Text(
                 'Welcome',
                 style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
               ),
               Text(
                 '$role',
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 23,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Form(
+                key: _formKey,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextFormField(
-                      decoration: InputDecoration(
-                          hintText: 'Username',
-                          prefixIcon: Icon(Icons.person),
-                          contentPadding: EdgeInsets.only(top: 18)),
-                      keyboardType: TextInputType.text,
+                      decoration: const InputDecoration(
+                        labelText: 'Email Address',
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.person),
+                        contentPadding: EdgeInsets.only(top: 18),
+                      ),
+                      controller: _emailController,
+                      keyboardType: TextInputType.emailAddress,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
                       obscureText: true,
-                      decoration: InputDecoration(
-                          hintText: 'Password',
-                          prefixIcon: Icon(Icons.lock),
-                          contentPadding: EdgeInsets.only(top: 18)),
+                      decoration: const InputDecoration(
+                        labelText: 'Password',
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.lock),
+                        contentPadding: EdgeInsets.only(top: 18),
+                      ),
+                      controller: _passwordController,
                       keyboardType: TextInputType.text,
                     )
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.centerRight,
                 child: Text(
                   'Restore Password?',
@@ -75,61 +90,71 @@ class Login extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               SizedBox(
                 width: double.infinity,
+                height: 50,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/wrapper',
                         arguments: '$role');
                   },
-                  child: Text('Access your account'),
+                  child: const Text('Access your account'),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Row(
-                children: [
-                  Expanded(flex: 1, child: Divider()),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      'Or',
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+              role == 'Administrator'
+                  ? Container()
+                  : Row(
+                      children: const [
+                        Expanded(flex: 1, child: Divider()),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: Text(
+                            'Or',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Expanded(flex: 1, child: Divider()),
+                      ],
                     ),
-                  ),
-                  Expanded(flex: 1, child: Divider()),
-                ],
-              ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton(
-                  onPressed: () {},
-                  child: Text('Request for a membership'),
-                ),
-              ),
-              SizedBox(
+              role == 'Administrator'
+                  ? Container()
+                  : SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/membership_request',
+                              arguments: role);
+                        },
+                        child: const Text('Request for a membership'),
+                      ),
+                    ),
+              const SizedBox(
                 height: 20,
               ),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'School Terms',
-                  style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold),
-                ),
-              )
+              role == 'Administrator'
+                  ? Container()
+                  : const Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        'School Terms',
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
             ],
           ),
         ),
